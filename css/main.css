@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Griffy&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+/*@import "vars.css";*/
+/*@import 'pc.css';*/
+/*@import 'tablet.css';*/
+
+/* Misc Features */
+.parallax{
+  background-image: url("../img/montoyaLogo.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*Fonts*/
+:root{
+  --a: Allison;
+  --b: Dancing Script;
+  --c: Amatic SC;
+  --d: Griffy;
+  --e: Zen Kurenaido;
+  --f: Cinzel;
+}
+
+/*Responsive Design (mobile first)*/
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 1200px) {
+  /*Header*/
+  body.pc img.header{width: 100%;}
+  body.pc a.headerBtn{
+      position: relative;
+      margin: 4px;
+      left: 14%;
+      bottom: 112px;
+    }
+  body.pc img.headerImg{width: 100px; background: white; border-radius: 50px;}
+
+  #top{
+    cursor: pointer;
+    height: 2em;
+    width: 2em;
+    background: rgba(255,255,255,0.5);
+    border: 2px solid green;
+    color: green;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 4px 0 0 0 rgba(1,1,1,.25) inset;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1;
+    position: fixed;
+  }
+  #top:active{
+    border: 2px solid red;
+    color: red;
+  }
+
+  /*Index: Tab Feature*/
+  body.pc div.portfolio h1{
+    font-family: var(--b);
+    font-size: 50px;
+  }
+  body.pc button.btn{
+    font-family: var(--f);
+    letter-spacing: 2px;
+    background: rgba(1,1,1,.2);
+    border: none;
+    height: 3em;
+    width: 11%;
+    border-radius: 10px 10px 0px 0px;
+  }
+  body.pc button.btn:hover{cursor: pointer;}
+  /*
+  body.pc #tab0{
+    background: red;
+    border: 2px solid black;
+  }
+  body.pc #tab1{
+    background: red;
+    border: 2px solid black;
+  }
+  body.pc #tab2{
+    background: orange;
+    border: 2px solid black;
+  }
+  body.pc #tab3{
+    background: green;
+    border: 2px solid black;
+  }
+  body.pc #tab4{
+    background: green;
+    border: 2px solid black;
+  }
+  body.pc #tab5{
+    background: green;
+    border: 2px solid black;
+  }
+  body.pc #tab6{
+    background: green;
+    border: 2px solid black;
+  }
+  body.pc #tab7{
+    background: green;
+    border: 2px solid black;
+  }
+  */
+  body.pc div.content{
+    height: 100%;
+    display: none;
+    font-family: Arial;
+    padding: 25px;
+  }
+  body.pc div.content p{margin: 100px 0px;}
+  body.pc div.content img{border-radius: 0 50px;}
+  body.pc div.content .left{float: left;}
+  body.pc div.content .right{float: right;}
+
+  footer{
+    font-family: var(--f);
+    font-variant: small-caps;
+    font-family: 20px;
+    width: 100%;
+    margin: 10px;
+    clear: both;
+  }
+  footer small{width: 25%;}
+  footer small a{color: green; text-decoration: none;}
+  footer small a:hover{color: black;}
+  footer small a:active{color: red;}
+  footer p{font-size: 15px; clear: both;}
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
