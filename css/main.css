@@ -123,6 +123,10 @@
     display: none;
     font-family: Arial;
   }
+  body.mobile div.content video{
+    border-radius: 25px;
+    box-shadow: 4px 0px 0px black inset;
+  }
   body.mobile div.content p{
     margin-top: 15%;
     padding: 5%;
@@ -130,7 +134,6 @@
     box-shadow: 5px 0px 5px black inset;
     float: left;
     clear: left;
-
   }
   body.mobile div.content img{border-radius: 0 50px;}
   body.mobile div.content ul{
@@ -176,10 +179,10 @@
   }
 
   /*Footer*/
-  footer{
+  body.mobile footer{
     font-family: var(--f);
     font-variant: small-caps;
-    font-family: 20px;
+    font-size: 15px;
     width: 70%;
     margin: 10px;
     float: right;
@@ -289,6 +292,10 @@
     color: black;
     border-left: 2px solid black;
     border-right: 2px solid black;
+  }
+  body.pc div.content video{
+    border-radius: 25px;
+    box-shadow: 4px 0px 0px black inset;
   }
 
   /*Slideshow Feature*/
