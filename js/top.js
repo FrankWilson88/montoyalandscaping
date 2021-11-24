@@ -3,16 +3,17 @@ var width = window.innerWidth || document.body.clientWidth || document.documentE
 var scroll = document.body.scrollTop || document.documentElement.scrollTop;
 window.onscroll = function(){scrollFunction()};
 function scrollFunction(){
-  if(scroll > 50 && width < 500){
-    up.style.display = "block";
+  if (width < 500) {
+    if(scroll > 50){
+      up.style.display = "block";
+    }
+    else {
+      up.style.display = "none";
+    }
   }
-  else if (scroll < 1000 && width < 1200) {
-    up.style.display = "block";
+  else {
+    up.innerHTML = "shit";
   }
-  else{
-    up.style.display = "none";
-  }
-
 }
 function backToTop(){
   document.body.scrollTop = 1000;
