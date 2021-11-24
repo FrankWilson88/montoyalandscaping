@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Allison&family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Griffy&family=Zen+Kurenaido&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
-/*@import "vars.css";*/
-/*@import 'pc.css';*/
-/*@import 'tablet.css';*/
 
 /* Misc Features */
 .parallax{
@@ -41,6 +38,154 @@
   padding: 15px;
 }
 
+/*Mobile View*/
+@media only screen and (max-width: 500px){
+  body.mobile img.header{width: 100%;}
+  body.mobile a.headerBtn{
+    position: relative;
+    margin: 1px;
+    left: 14%;
+    bottom: 32px;
+  }
+  body.mobile img.headerImg{width: 25px; background: white; border-radius: 50px;}
+
+  body.mobile #top{
+    cursor: pointer;
+    height: 10%;
+    width: 10%;
+    background: rgba(255,255,255,0.5);
+    border: 2px solid green;
+    color: green;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 4px 0 0 0 rgba(1,1,1,.25) inset;
+    bottom: 2%;
+    left: 20%;
+    z-index: 1;
+    position: fixed;
+    display: none;
+  }
+  body.mobile #top:active{
+    border: 2px solid red;
+    color: red;
+  }
+
+  /*Index: Tab Feature*/
+  body.mobile div.tabWrapper{
+    width: 100%;
+  }
+  body.mobile div.tabWrapper img{
+    width: 15%;
+    position: fixed;
+    bottom: 1%;
+    z-index: 1;
+  }
+  body.mobile div.tabWrapper div.tabContent{
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.75);
+    bottom: 10%;
+    z-index: 1;
+    animation: menu 1s backwards;
+  }
+  @keyframes menu{
+    from {transform: scaleX(0);}
+    to {transform: scaleX(1);}
+  }
+  body.mobile button.btn{
+    display: inline-block;
+    float: left;
+    clear: both;
+    font-family: var(--f);
+    letter-spacing: 2px;
+    background: none;
+    color: white;
+    border: none;
+    height: 3em;
+    width: 100%;
+  }
+  body.mobile button.btn:active{animation: btnClick .05s backwards;}
+  @keyframes btnClick{
+    from {width: 0;}
+    to {width: 100%;}
+  }
+
+
+  body.mobile div.portfolio h1{
+    font-family: var(--b);
+    font-size: 25px;
+  }
+  body.mobile div.content{
+    height: 100%;
+    display: none;
+    font-family: Arial;
+  }
+  body.mobile div.content div.slide img{
+    height: 250px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  body.mobile div.content div.dotWrapper{
+    margin-top: 10px;
+    float: left;
+    clear: left;
+    display: inline-block;
+    padding-left: 35%;
+  }
+  body.mobile div.content span.dot{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+  }
+  body.mobile div.content p{margin-top: 15%; float: left; clear: left;}
+  body.mobile div.content img{border-radius: 0 50px;}
+  body.mobile div.content ul{
+    height: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  body.mobile div.content li{margin: 10px 5px; float: left; clear: left;}
+  body.mobile div.content a{
+    padding: 5px;
+    text-decoration: none;
+    color: #0d2767;
+    font-family: var(--f);
+  }
+  body.mobile div.content a:hover{
+    color: black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+
+  footer{
+    font-family: var(--f);
+    font-variant: small-caps;
+    font-family: 20px;
+    width: 100%;
+    margin: 10px;
+    clear: both;
+  }
+  body.mobile footer small{width: 25%;}
+  body.mobile footer small a{color: green; text-decoration: none;}
+  body.mobile footer small a:hover{color: black;}
+  body.mobile footer small a:active{color: red;}
+  body.mobile footer p{font-size: 15px; clear: both;}
+  .col-m-1 {width: 8.33%;}
+  .col-m-2 {width: 16.66%;}
+  .col-m-3 {width: 25%;}
+  .col-m-4 {width: 33.33%;}
+  .col-m-5 {width: 41.66%;}
+  .col-m-6 {width: 50%;}
+  .col-m-7 {width: 58.33%;}
+  .col-m-8 {width: 66.66%;}
+  .col-m-9 {width: 75%;}
+  .col-m-10 {width: 83.33%;}
+  .col-m-11 {width: 91.66%;}
+  .col-m-12 {width: 100%;}
+}
+
 /* For desktop: */
 @media only screen and (min-width: 1200px) {
   /*Header*/
@@ -53,13 +198,13 @@
     }
   body.pc img.headerImg{width: 100px; background: white; border-radius: 50px;}
 
-  #top{
+  body.pc #top{
     cursor: pointer;
     height: 2em;
     width: 2em;
     background: rgba(255,255,255,0.5);
-    border: 2px solid green;
     color: green;
+    border: 2px solid green;
     font-size: 25px;
     border-radius: 10px;
     box-shadow: 4px 0 0 0 rgba(1,1,1,.25) inset;
@@ -67,8 +212,9 @@
     right: 25px;
     z-index: 1;
     position: fixed;
+    display: none;
   }
-  #top:active{
+  body.pc #top:active{
     border: 2px solid red;
     color: red;
   }
@@ -78,62 +224,67 @@
     font-family: var(--b);
     font-size: 50px;
   }
+  body.pc div.tabWrapper{width:100%;margin-left: 5%;}
+  body.pc div.tabWrapper img{display: none;}
   body.pc button.btn{
     font-family: var(--f);
     letter-spacing: 2px;
-    background: rgba(1,1,1,.2);
+    background: rgba(1,1,1,.2) inset;
     border: none;
     height: 3em;
     width: 11%;
-    border-radius: 10px 10px 0px 0px;
+    transform: skewX(-25deg);
+    transition: border .5s;
   }
-  body.pc button.btn:hover{cursor: pointer;}
-  /*
-  body.pc #tab0{
-    background: red;
-    border: 2px solid black;
+  body.pc button.btn:hover{
+    cursor: pointer;
+    border: 1px solid black;
   }
-  body.pc #tab1{
-    background: red;
-    border: 2px solid black;
-  }
-  body.pc #tab2{
-    background: orange;
-    border: 2px solid black;
-  }
-  body.pc #tab3{
-    background: green;
-    border: 2px solid black;
-  }
-  body.pc #tab4{
-    background: green;
-    border: 2px solid black;
-  }
-  body.pc #tab5{
-    background: green;
-    border: 2px solid black;
-  }
-  body.pc #tab6{
-    background: green;
-    border: 2px solid black;
-  }
-  body.pc #tab7{
-    background: green;
-    border: 2px solid black;
-  }
-  */
+
   body.pc div.content{
     height: 100%;
     display: none;
     font-family: Arial;
-    padding: 25px;
+    margin: 3%;
   }
-  body.pc div.content p{margin: 100px 0px;}
+  body.pc div.content div.slide img{
+    height: 500px;
+  }
+  body.pc div.content div.dotWrapper{
+    float: left;
+    clear: left;
+    display: inline-block;
+    padding-left: 20%;
+  }
+  body.pc div.content span.dot{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+  }
+  body.pc div.content p{margin-top: 15%; float: none}
   body.pc div.content img{border-radius: 0 50px;}
   body.pc div.content .left{float: left;}
   body.pc div.content .right{float: right;}
+  body.pc div.content ul{
+    height: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  body.pc div.content li{margin: 10px 5px;}
+  body.pc div.content a{
+    padding: 5px;
+    text-decoration: none;
+    color: #0d2767;
+    font-family: var(--f);
+  }
+  body.pc div.content a:hover{
+    color: black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
 
-  footer{
+  body.pc footer{
     font-family: var(--f);
     font-variant: small-caps;
     font-family: 20px;
@@ -141,11 +292,11 @@
     margin: 10px;
     clear: both;
   }
-  footer small{width: 25%;}
-  footer small a{color: green; text-decoration: none;}
-  footer small a:hover{color: black;}
-  footer small a:active{color: red;}
-  footer p{font-size: 15px; clear: both;}
+  body.pc footer small{width: 25%;}
+  body.pc footer small a{color: green; text-decoration: none;}
+  body.pc footer small a:hover{color: black;}
+  body.pc footer small a:active{color: red;}
+  body.pc footer p{font-size: 15px; clear: both;}
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}
