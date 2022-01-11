@@ -1,1 +1,1 @@
-web: gunicorn montoyalandscaping.wsgi --log-file -
+web: gunicorn montoyalandscapingpy.wsgi --log-file -
