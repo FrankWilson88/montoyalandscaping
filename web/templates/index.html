@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+{% if user.is_superuser %}
+<p>{{greeting}}</p>
+{% endif %}
+<div class="portfolio" id="backtotop">
+  <div class="tabWrapper"><img src="{% static 'img/menuIcon.png' %}" onclick="mobileMenu()" alt="Mobile Menu Icon">
+    <div class="tabContent" id="tabContent">
+      <button onclick="tab('about', this)" id="default" class="btn">About Us</button>
+      <button onclick="tab('mulch', this)" class="btn">Mulching</button>
+      <button onclick="tab('trim', this)" class="btn">Trimming</button>
+      <button onclick="tab('mow', this)" class="btn">Mowing</button>
+      <button onclick="tab('tree', this)" class="btn">Tree Removal</button>
+      <button onclick="tab('stone', this)" class="btn">Stone Install</button>
+      <button onclick="tab('powerwash', this)" class="btn">Power Washing</button>
+      <button onclick="tab('hardscape', this)" class="btn">Hardscape</button>
+    </div>
+  </div>
+  <div id="about" class="content">
+    <h1>Let Us Introduce Ourselves!</h1>
+      <div class="col-m-12 col-6 col-s-6">
+        <div class="slide"><img src="{% static 'img/patio.jpg' %}"></div>
+        <div class="slide"><img src="{% static 'img/firepit1.jpg' %}"></div>
+        <div class="slide"><img src="{% static 'img/stone6.jpg' %}"></div>
+        <div class="slide"><img src="{% static 'img/mowing1.jpg' %}"></div>
+        <div class="dotWrapper">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    {% for x in about %}
+      <p>{{x.mission}}</p>
+      <img src="{{x.image.url}}" class="right">
+      <ul><b>How to Contact us:</b>
+        <li><a href="{{x.fbLink}}" target="_blank">Message us on Facebook!</a></li>
+        <li><a href="{{x.phone}}">(443) 605-4933</a></li>
+        <li><a href="mailto:{{x.email}}" target="_blank">{{x.email}}</a></li>
+      </ul>
+      <p><b>A word from the owner:</b><br>{{x.ownerComment}}</p>
+      <p><b>Thank you to my crew:</b><br>{{x.crewComment}}</p>
+    {% endfor %}
+  </div>
+
+  <div id="mulch" class="content">
+    <h1 class="portfolio">We bleed Mulch.</h1>
+    {% for x in mulch %}
+    <div class="item col-5 col-s-5 col-m-12">
+      <img src="{{x.image.url}}" alt="mulching fun">
+      <p>{{x.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="trim" class="content">
+    <h1 class="portfolio">No Tree is too Small for this Crew!</h1>
+    {% for x in trimming %}
+    <div class="item col-5 col-s-5 col-m-12">
+      <img src="{{x.image.url}}" alt="trimming fun">
+      <p>{{x.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="mow" class="content">
+    <h1 class="portfolio">Lovin' that smell of fresh cut grass in the morning!</h1>
+    {% for x in mowing %}
+    <div class="item col-5 col-s-5 col-m-12">
+      <img src="{{x.image.url}}" alt="mowing fun">
+      <p>{{x.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="tree" class="content">
+    <h1 class="portfolio">We take care of nature in a professional manner!</h1>
+    <small id="load"></small>
+    <video id="vid" class="left col-6 col-s-6 col-m-12" alt="tree fun" width="500" height="500" muted controls><source src="{% static 'img/treeChop.mp4' %}" type="video/mp4">Your shit don't work for vids my mans...</source></video>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    {% for x in tree %}
+    <div class="item col-5 col-s-5 col-m-12">
+      <img src="{{x.image.url}}" alt="tree fun">
+      <p>{{x.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="stone" class="content">
+    <h1 class="portfolio">We make it look like artwork, not just dirt and rock!</h1>
+    {% for x in stone %}
+    <div class="item col-5 col-s-5 col-m-12">
+      <img src="{{x.image.url}}" alt="stone fun">
+      <p>{{x.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="powerwash" class="content">
+    {% for x in powerwash %}
+    <div class="item col-5 col-s-5 col-m-12">
+      <img src="{{x.image.url}}" alt="powerwashing fun">
+      <p>{{x.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="hardscape" class="content">
+    <h1 class="portfolio">Your lanscape will be the talk of the town!</h1>
+    {% for x in hardscape %}
+    <div class="item col-5 col-s-5 col-m-12">
+      <img src="{{x.image.url}}" alt="hardscape fun">
+      <p>{{x.description}}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

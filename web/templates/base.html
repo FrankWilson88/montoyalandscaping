@@ -1,0 +1,50 @@
+<!doctype html>
+{% load static %}
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Joe Corso">
+  <meta name="description" content="Come see the official home of Montoya Landscaping LLC! The best decision for all of your professional landscaping needs.">
+  <meta name="keywords" content="Montoya Landscaping LLC, LLC, Landscaping, Portfolio, Professional, Family Owned, Small Business, Local">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <img rel="icon" href="{% static 'img/montoyaLogo.jpg' %}" type="image/icon type">
+  <meta name="robots" content="index follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montoya Landscaping LLC|Home</title>
+</head>
+<body class="row pc tablet mobile">
+  <header>
+    <img class="header" src="{% static 'img/montoyaLogo.jpg' %}" alt="Montoya Logo">
+    <a class="headerBtn" href="https://www.facebook.com/Montoya-Landscaping-Services-856645058033759" target="_blank"><img class="headerImg" src="{% static 'img/facebook.png' %}" alt="facebook link"></a>
+    <a class="headerBtn" href="mailto:montoya18296@gmail.com?subject=Business%20Inquirey" target="_blank"><img class="headerImg" src="{% static 'img/email.png' %}" alt="email link"></a>
+  </header>
+
+  <a href="#backtotop"><button id="top">&#8682;</button></a>
+
+  {% block 'content' %}
+  {% endblock %}
+
+  <footer>
+    <div class='col-6 col-s-6'>
+      <div id="clock">js error</div>
+      <small>Copyright &copy; <a href="#">Wormhole Enterprise </a><div id="copyright">js error</div></small>
+      <small>
+        <div>Facebook Icon made by <a href="https://www.flaticon.com/authors/riajulislam" title="riajulislam">riajulislam</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Eamil Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Log In/Out Icon made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      </small>
+      <div class="col-6 col-s-6 col-m-6"><pre>{{quote}}</pre></div>
+    </div>
+    {% if user.is_superuser %}
+      <div class="col-6 col-s-6"><a href="{% url 'logout' %}" target='__blank'><img src="{% static 'img/logout.png' %}"></a></div>
+    {% else %}
+      <div class="col-6 col-s-6"><a href="{% url 'admin:index' %}" target='__blank'><img src="{% static 'img/login.png' %}"></a></div>
+    {% endif %}
+  </footer>
+</body>
+<script src="{% static 'js/clock.js' %}"></script>
+<script src="{% static 'js/tab.js' %}"></script>
+<script src="{% static 'js/slideshow.js' %}"></script>
+<script src="{% static 'js/mobileMenu.js' %}"></script>
+<script src="{% static 'js/loading.js' %}"></script>
+</html>
