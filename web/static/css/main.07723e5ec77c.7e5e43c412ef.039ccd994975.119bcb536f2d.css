@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Griffy&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* Misc Features */
+.parallax{
+  background-image: url("../img/montoyaLogo.19234d238104.19234d238104.19234d238104.19234d238104.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*Fonts*/
+:root{
+  --a: Allison;
+  --b: Dancing Script;
+  --c: Amatic SC;
+  --d: Griffy;
+  --e: Zen Kurenaido;
+  --f: Cinzel;
+}
+
+/*Responsive Design*/
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+/*Mobile View*/
+@media only screen and (max-width: 500px){
+  /*Header*/
+  body.mobile img.header{width: 100%;}
+  body.mobile a.headerBtn{
+    position: relative;
+    margin: 1px;
+    left: 14%;
+    bottom: 32px;
+  }
+  body.mobile img.headerImg{width: 25px; background: white; border-radius: 50px;}
+
+  /*Back to Top Button*/
+  body.mobile a #top{
+    cursor: pointer;
+    height: 8%;
+    width: 10%;
+    background: rgba(255,255,255,0.5);
+    border: 2px solid green;
+    color: green;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 4px 0 0 0 rgba(1,1,1,.25) inset;
+    bottom: 2%;
+    left: 20%;
+    z-index: 1;
+    position: fixed;
+  }
+  body.mobile #top:active{
+    border: 2px solid red;
+    color: red;
+  }
+
+  /*Tab Feature(This also switches to Mobile Menu Feature with JS file)*/
+  body.mobile div.tabWrapper{
+    width: 100%;
+  }
+  body.mobile div.tabWrapper img{
+    width: 15%;
+    position: fixed;
+    bottom: 1%;
+    z-index: 1;
+  }
+  /*This is the animation for Mobile Menu*/
+  body.mobile div.tabWrapper div.tabContent{
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.75);
+    bottom: 10%;
+    z-index: 1;
+    animation: menu 1s backwards;
+  }
+  @keyframes menu{
+    from {transform: scaleX(0);}
+    to {transform: scaleX(1);}
+  }
+  /*This styles buttons for Menu*/
+  body.mobile button.btn{
+    display: inline-block;
+    float: left;
+    clear: both;
+    font-family: var(--f);
+    letter-spacing: 2px;
+    background: none;
+    color: white;
+    border: none;
+    height: 3em;
+    width: 100%;
+  }
+  body.mobile button.btn:active{animation: btnClick .05s backwards;}
+  @keyframes btnClick{
+    from {width: 0;}
+    to {width: 100%;}
+  }
+
+  /*Content*/
+  body.mobile div.portfolio h1{
+    font-family: var(--b);
+    font-size: 25px;
+  }
+  body.mobile div.content{
+    height: 100%;
+    display: none;
+    font-family: Arial;
+  }
+  body.mobile div.content video{
+    border-radius: 25px;
+    box-shadow: 4px 0px 0px black inset;
+  }
+  body.mobile div.content p{
+    margin-top: 15%;
+    padding: 5%;
+    border-radius: 15px;
+    box-shadow: 5px 0px 5px black inset;
+    float: left;
+    clear: left;
+  }
+  body.mobile div.content img{border-radius: 0 50px;}
+  body.mobile div.content ul{
+    height: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  body.mobile div.content li{margin: 10px 5px; float: left; clear: left;}
+  body.mobile div.content a{
+    padding: 5px;
+    text-decoration: none;
+    color: #0d2767;
+    font-family: var(--f);
+  }
+  body.mobile div.content a:hover{
+    color: black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+
+  /*Slideshow Feature*/
+  /*The Images*/
+  body.mobile div.content div.slide img{
+    height: 250px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  /*The Dot Wrapper*/
+  body.mobile div.content div.dotWrapper{
+    margin-top: 10px;
+    float: left;
+    clear: left;
+    display: inline-block;
+    padding-left: 35%;
+  }
+  /*The Dots*/
+  body.mobile div.content span.dot{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+  }
+
+  /*Footer*/
+  body.mobile footer{
+    font-family: var(--f);
+    font-variant: small-caps;
+    font-size: 15px;
+    width: 70%;
+    margin: 10px;
+    float: right;
+    clear: both;
+  }
+  body.mobile footer small{width: 25%;}
+  body.mobile footer small a{color: green; text-decoration: none;}
+  body.mobile footer small a:hover{color: black;}
+  body.mobile footer small a:active{color: red;}
+  body.mobile footer p{font-size: 15px; clear: both;}
+
+  /*Responsive*/
+  .col-m-1 {width: 8.33%;}
+  .col-m-2 {width: 16.66%;}
+  .col-m-3 {width: 25%;}
+  .col-m-4 {width: 33.33%;}
+  .col-m-5 {width: 41.66%;}
+  .col-m-6 {width: 50%;}
+  .col-m-7 {width: 58.33%;}
+  .col-m-8 {width: 66.66%;}
+  .col-m-9 {width: 75%;}
+  .col-m-10 {width: 83.33%;}
+  .col-m-11 {width: 91.66%;}
+  .col-m-12 {width: 100%;}
+}
+
+/* For desktop: */
+@media only screen and (min-width: 1200px) {
+  /*Header*/
+  body.pc img.header{width: 100%;}
+  body.pc a.headerBtn{
+      position: relative;
+      margin: 4px;
+      left: 14%;
+      bottom: 112px;
+    }
+  body.pc img.headerImg{width: 100px; background: white; border-radius: 50px;}
+
+  /*Back to top button*/
+  body.pc a #top{
+    cursor: pointer;
+    height: 2em;
+    width: 2em;
+    background: rgba(255,255,255,0.5);
+    color: green;
+    border: 2px solid green;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 4px 0 0 0 rgba(1,1,1,.25) inset;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1;
+    position: fixed;
+  }
+  body.pc #top:active{
+    border: 2px solid red;
+    color: red;
+  }
+
+  /*Tab Feature(This will not show the Mobile Menu)*/
+  body.pc div.portfolio h1{
+    font-family: var(--b);
+    font-size: 50px;
+  }
+  body.pc div.tabWrapper{width:100%; margin-left:5%;}
+  body.pc div.tabWrapper img{display: none;}
+  body.pc button.btn{
+    font-family: var(--f);
+    letter-spacing: 2px;
+    background: rgba(1,1,1,.2) inset;
+    border: none;
+    height: 3em;
+    width: 11%;
+    transform: skewX(-25deg);
+    transition: border .5s;
+  }
+  body.pc button.btn:hover{
+    cursor: pointer;
+    border: 1px solid black;
+  }
+
+  /*Content*/
+  body.pc div.content{
+    height: 100%;
+    display: none;
+    font-family: Arial;
+    margin: 3%;
+  }
+  body.pc div.content div.item{
+    margin: 0 0 5% 5%;
+    border-radius: 0 50px;
+    box-shadow: 5px 5px 5px 5px;
+  }
+  body.pc div.content p{margin-top: 15%;}
+  body.pc div.content img{border-radius: 0 50px; width: 100%; height: 500px;}
+  body.pc div#about img.right{float: right; clear: left; width: 50%; height: 100%;}
+  body.pc div.content ul{
+    height: 100%;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  body.pc div.content li{margin: 10px 5px;}
+  body.pc div.content a{
+    padding: 5px;
+    text-decoration: none;
+    color: #0d2767;
+    font-family: var(--f);
+  }
+  body.pc div.content a:hover{
+    color: black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+  body.pc div.content video{
+    border-radius: 25px;
+    box-shadow: 4px 0px 0px black inset;
+  }
+
+  /*Slideshow Feature*/
+  body.pc div.content div.slide img{
+    height: 500px;
+  }
+  body.pc div.content div.dotWrapper{
+    float: left;
+    clear: left;
+    display: inline-block;
+    padding: 0 40% 5% 40%;
+  }
+  body.pc div.content span.dot{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+  }
+
+  /*Footer*/
+  body.pc footer{
+    font-family: var(--f);
+    font-variant: small-caps;
+    font-family: 20px;
+    width: 100%;
+    margin: 10px;
+    clear: both;
+  }
+  body.pc footer small{width: 25%;}
+  body.pc footer small a{color: green; text-decoration: none;}
+  body.pc footer small a:hover{color: black;}
+  body.pc footer small a:active{color: red;}
+  body.pc footer p{font-size: 15px; clear: both;}
+  body.pc footer img{width: 25px; float: right;}
+
+  /*Responsive View*/
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}

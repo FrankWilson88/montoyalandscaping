@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y0pid+i*7y1hnm1_1sajj%6$10glzushpna)l!f5a=dg!1^l-k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'montoyalandscaping.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'montoyalandscaping.herokuapp.com']
 
 # Application definition
 
@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'web.apps.WebConfig',
 ]
@@ -120,11 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'web/static/')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'web/static')
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'web/static/media')
-MEDIA_URL = '/media/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'web/'),
+)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'web/static/media')
+MEDIA_URL = '/static/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
