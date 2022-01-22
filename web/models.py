@@ -5,12 +5,12 @@ from django.db import models
 class About(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/about/')
-    mission = models.TextField()
+    mission = models.TextField(null=True, blank=True)
     fbLink = models.CharField(max_length=200, null=True, blank=True, default='https://www.facebook.com/Montoya-Landscaping-Services-856645058033759')
     phone = models.CharField(max_length=15, null=True, blank=True, default='(443) 605-4933')
     email = models.EmailField(max_length=100, null=True, blank=True, default='Montoya18296@gmail.com')
-    ownerComment = models.TextField()
-    crewComment = models.TextField()
+    ownerComment = models.TextField(null=True, blank=True)
+    crewComment = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'About'
@@ -20,7 +20,7 @@ class About(models.Model):
 class Mulch(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/mulch/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'Mulching'
@@ -30,7 +30,7 @@ class Mulch(models.Model):
 class Trimming(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/trimming/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'Trimming'
@@ -40,7 +40,7 @@ class Trimming(models.Model):
 class Mowing(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/mowing/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'Mowing'
@@ -50,7 +50,7 @@ class Mowing(models.Model):
 class Tree(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/tree/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'Tree Removal'
@@ -61,7 +61,7 @@ class Tree(models.Model):
 class Stone(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/stone/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'Stone Install'
@@ -71,7 +71,7 @@ class Stone(models.Model):
 class Powerwash(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/powerwash/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'Power Washing'
@@ -81,7 +81,7 @@ class Powerwash(models.Model):
 class Hardscape(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/hardscape/')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'Hardscape'
