@@ -24,12 +24,12 @@ LOGOUT_REDIRECT_URL = '/index/'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     SECRET_KEY = '09n384pyf5239w4ybewo87owvb87enyr9cq28pbu3yr08ct7wyn'
 
-ALLOWED_HOSTS = ['localhost', '192.168.0.7:8000', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://montoyalandscaping.herokuapp.com']
 
 # Application definition
 
@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'web/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'web/media')
 MEDIA_URL = '/media/'
 
