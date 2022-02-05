@@ -1,0 +1,43 @@
+.round_glow{
+  nav.round_glow_blue{
+      padding: 25px;
+      height: 100%;
+      width: 50%;
+  }
+  nav.round_glow_blue a{
+      height: 100%;
+      width: 100%;
+      margin: .5em;
+      padding: .75em;
+      color: blue;
+      border-radius: 15px;
+      text-decoration: none;
+      animation: none;
+      transition: background .5s;
+  }
+  nav.round_glow_blue a:hover{
+      animation: glow 2s infinite;
+      background: rgba(0,0,0,.5);
+  }
+
+  nav.round_glow_blue a:active{
+      animation: glow_active .2s forwards;
+      color: red;
+      background: rgba(255,0,0,.5);
+  }
+  @keyframes glow{
+      from  {box-shadow: 0 0 8px 0 blue;}
+      12.5% {box-shadow: 0 0 15px 0 blue;}
+      25%   {box-shadow: 0 0 25px 2px blue;}
+      37.5% {box-shadow: 0 0 15px 0 blue;}
+      50%   {box-shadow: 0 0 8px 0 blue;}
+      62.5% {box-shadow: 0 0 15px 0 blue;}
+      75%   {box-shadow: 0 0 25px 2px blue;}
+      87.5% {box-shadow: 0 0 15px 0 blue;}
+      to    {box-shadow: 0 0 8px 0 blue;}
+  }
+  @keyframes glow_active{
+      from {box-shadow: 0 0 8px 0 red; text-shadow: 0 0 2px red;}
+      to   {box-shadow: 0 0 25px 0 red; text-shadow: 0 0 5px red;}
+  }
+}

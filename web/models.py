@@ -5,12 +5,12 @@ from django.db import models
 class About(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='img/about/')
-    mission = models.TextField(null=True, blank=True)
+    mission = models.TextField()
     fbLink = models.CharField(max_length=200, null=True, blank=True, default='https://www.facebook.com/Montoya-Landscaping-Services-856645058033759')
     phone = models.CharField(max_length=15, null=True, blank=True, default='(443) 605-4933')
     email = models.EmailField(max_length=100, null=True, blank=True, default='Montoya18296@gmail.com')
-    ownerComment = models.TextField(null=True, blank=True)
-    crewComment = models.TextField(null=True, blank=True)
+    ownerComment = models.TextField()
+    crewComment = models.TextField()
     class Meta:
         ordering = ['timestamp']
         verbose_name_plural = 'About'

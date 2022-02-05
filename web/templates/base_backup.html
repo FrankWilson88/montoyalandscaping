@@ -6,7 +6,7 @@
   <meta name="author" content="Joe Corso">
   <meta name="description" content="Come see the official home of Montoya Landscaping LLC! The best decision for all of your professional landscaping needs.">
   <meta name="keywords" content="Montoya Landscaping LLC, LLC, Landscaping, Portfolio, Professional, Family Owned, Small Business, Local">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?{% now 'U' %}">
+  <link rel="stylesheet/less" type="text/css" href="{% static 'css/main.less' %}">
   <img rel="icon" href="{% static 'img/montoyaLogo.jpg' %}" type="image/icon type">
   <meta name="robots" content="index follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +14,9 @@
 </head>
 <body class="row pc tablet mobile">
   <header>
-    <img class="header" src="{% static 'img/montoyaLogo.jpg' %}" alt="Montoya Logo">
-    <a class="headerBtn" href="https://www.facebook.com/Montoya-Landscaping-Services-856645058033759" target="_blank"><img class="headerImg" src="{% static 'img/facebook.png' %}" alt="facebook link"></a>
-    <a class="headerBtn" href="mailto:montoya18296@gmail.com?subject=Business%20Inquirey" target="_blank"><img class="headerImg" src="{% static 'img/email.png' %}" alt="email link"></a>
+    <img src="{% static 'img/montoyaLogo.jpg' %}" alt="Montoya Logo">
+    <a href="https://www.facebook.com/Montoya-Landscaping-Services-856645058033759" target="_blank"><img class="headerImg" src="{% static 'img/facebook.png' %}" alt="facebook link"></a>
+    <a href="mailto:montoya18296@gmail.com?subject=Business%20Inquirey" target="_blank"><img class="headerImg" src="{% static 'img/email.png' %}" alt="email link"></a>
   </header>
 
   <a href="#backtotop"><button id="top">&#8682;</button></a>
@@ -47,4 +47,5 @@
 <script src="{% static 'js/slideshow.js' %}"></script>
 <script src="{% static 'js/mobileMenu.js' %}"></script>
 <script src="{% static 'js/loading.js' %}"></script>
+<script src="{% static 'js/less.js' %}"></script>
 </html>

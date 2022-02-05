@@ -24,9 +24,12 @@ LOGOUT_REDIRECT_URL = '/index/'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'montoyalandscaping.herokuapp.com']
+if DEBUG:
+    SECRET_KEY = '09n384pyf5239w4ybewo87owvb87enyr9cq28pbu3yr08ct7wyn'
+
+ALLOWED_HOSTS = ['localhost', '192.168.0.7:8000', '127.0.0.1']
 
 # Application definition
 
@@ -119,14 +122,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'web/static/')
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'web/'),
-)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'web/static/media')
-MEDIA_URL = '/static/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'web/media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

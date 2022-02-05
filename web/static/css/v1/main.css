@@ -279,55 +279,25 @@
   body.pc div.content p{margin-top: 15%;}
   body.pc div.content img{border-radius: 0 50px; width: 100%; height: 500px;}
   body.pc div#about img.right{float: right; clear: left; width: 50%; height: 100%;}
-
-  ul{
-    width: 25%;
+  body.pc div.content ul{
+    height: 100%;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
   }
-  .round_glow_blue li{
-      list-style-type: none;
-      margin: 5%;
-      height: 25px;
-      width: 100%;
+  body.pc div.content li{margin: 10px 5px;}
+  body.pc div.content a{
+    padding: 5px;
+    text-decoration: none;
+    color: #0d2767;
+    font-family: var(--f);
   }
-  .round_glow_blue a{
-      height: 100%;
-      width: 100%;
-      margin: .5em;
-      padding: .5em;
-      color: blue;
-      border-radius: 15px;
-      text-decoration: none;
-      animation: none;
-      transition: background .5s;
+  body.pc div.content a:hover{
+    color: black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
   }
-  .round_glow_blue a:hover{
-      animation: glow 2s infinite;
-      background: rgba(0,0,0,.5);
-  }
-
-  .round_glow_blue a:active{
-      animation: glow_active .2s forwards;
-      color: red;
-      background: rgba(255,0,0,.5);
-  }
-
-  @keyframes glow{
-      from  {box-shadow: 0 0 8px 0 blue;}
-      12.5% {box-shadow: 0 0 15px 0 blue;}
-      25%   {box-shadow: 0 0 25px 2px blue;}
-      37.5% {box-shadow: 0 0 15px 0 blue;}
-      50%   {box-shadow: 0 0 8px 0 blue;}
-      62.5% {box-shadow: 0 0 15px 0 blue;}
-      75%   {box-shadow: 0 0 25px 2px blue;}
-      87.5% {box-shadow: 0 0 15px 0 blue;}
-      to    {box-shadow: 0 0 8px 0 blue;}
-  }
-
-  @keyframes glow_active{
-    from {box-shadow: 0 0 8px 0 red; text-shadow: 0 0 2px red;}
-    to   {box-shadow: 0 0 25px 0 red; text-shadow: 0 0 5px red;}
-  }
-
   body.pc div.content video{
     border-radius: 25px;
     box-shadow: 4px 0px 0px black inset;
